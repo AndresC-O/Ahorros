@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Vistas;
+
+import Clases.Conexion;
+
 /**
  *
  * @author andre
@@ -60,7 +63,9 @@ public class Loguin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
+        Conexion con = new Conexion();
+        con.getConnection();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

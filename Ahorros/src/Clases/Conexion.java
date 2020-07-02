@@ -1,6 +1,6 @@
 package Clases;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -24,7 +24,7 @@ public class Conexion {
             }
         }
         catch(ClassNotFoundException | SQLException ex){
-            System.out.println("¡Error al Conectar a la Base de Datos!");
+            System.out.println("¡Error al Conectar a la Base de Datos! " + ex);
         }
     }
     

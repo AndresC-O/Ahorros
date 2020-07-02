@@ -44,7 +44,6 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Prueba"/>
-        <Property name="actionCommand" type="java.lang.String" value="Prueba"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="btnPrueba"/>
