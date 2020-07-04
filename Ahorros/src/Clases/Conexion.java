@@ -8,22 +8,20 @@ import java.sql.SQLException;
 public class Conexion {
     
     private static Connection conn;
-    private static final String driver = "com.mysql.jdbc.Driver";
     private static final String User = "root";
     private static final String Password = "1234";
-    private static final String url = "jdbc:mysql//localhost:3306/ahorrosbd";
+    private static final String url = "jdbc:mysql://localhost:3306/ahorrosbd";
     
     public Conexion(){
         conn = null;
         try{
-            Class.forName(driver);
             conn = (Connection) DriverManager.getConnection(url, User, Password);
             
             if(conn != null){
-                System.out.println("¡Conectado corrctamente!");
+                System.out.println("¡Conectado correctamente!");
             }
         }
-        catch(ClassNotFoundException | SQLException ex){
+        catch(Exception ex){
             System.out.println("¡Error al Conectar a la Base de Datos! " + ex);
         }
     }
