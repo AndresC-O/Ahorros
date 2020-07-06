@@ -35,7 +35,7 @@ public class Loguin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txtUsuario = new javax.swing.JTextField();
+        txtDUI = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnInicio = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -48,7 +48,6 @@ public class Loguin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(300, 380));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -60,11 +59,11 @@ public class Loguin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(15, 47, 105));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtUsuario.setBackground(new java.awt.Color(15, 47, 105));
-        txtUsuario.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setBorder(null);
-        txtUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtDUI.setBackground(new java.awt.Color(15, 47, 105));
+        txtDUI.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        txtDUI.setForeground(new java.awt.Color(255, 255, 255));
+        txtDUI.setBorder(null);
+        txtDUI.setCaretColor(new java.awt.Color(255, 255, 255));
 
         txtPassword.setBackground(new java.awt.Color(15, 47, 105));
         txtPassword.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -150,7 +149,7 @@ public class Loguin extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUsuario)
+                                .addComponent(txtDUI)
                                 .addComponent(jSeparator1)
                                 .addComponent(txtPassword)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -170,7 +169,7 @@ public class Loguin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDUI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,8 +212,8 @@ public class Loguin extends javax.swing.JFrame {
         
         int resultado = 0;
         String pass = String.valueOf(txtPassword.getPassword());
-        String user = txtUsuario.getText();
-        String SQL = "Select * from tb_usuarios where usuario= '" + user +"' and contrasenia= '"+ pass +"'";
+        String DUI = txtDUI.getText();
+        String SQL = "Select * from tb_usuarios where DUI= '" + DUI +"' and contrasenia= '"+ pass +"'";
         
         try {
             
@@ -259,7 +258,7 @@ public class Loguin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblNuevoRegistro;
+    private javax.swing.JTextField txtDUI;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -53,9 +53,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         txtApellidos = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        txtUsuario = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         jSeparator5 = new javax.swing.JSeparator();
@@ -89,16 +86,16 @@ public class NuevoUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(lblReturn))
+                    .addComponent(lblReturn)
+                    .addComponent(jLabel7))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addComponent(lblReturn)
                 .addContainerGap())
         );
@@ -144,20 +141,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apellidos:");
-
-        jSeparator4.setBackground(new java.awt.Color(148, 162, 188));
-        jSeparator4.setForeground(new java.awt.Color(148, 162, 188));
-
-        txtUsuario.setBackground(new java.awt.Color(15, 47, 105));
-        txtUsuario.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setBorder(null);
-        txtUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Usuario:");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -216,43 +199,37 @@ public class NuevoUsuario extends javax.swing.JFrame {
                                             .addComponent(jSeparator1)
                                             .addComponent(txtDUI, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
                                     .addGroup(pnAzulLayout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnAzulLayout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(3, 3, 3)
                                         .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
-                                            .addComponent(txtNombres)))
-                                    .addGroup(pnAzulLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtNombres))))
                                 .addGap(0, 57, Short.MAX_VALUE))
                             .addGroup(pnAzulLayout.createSequentialGroup()
                                 .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnAzulLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(3, 3, 3)
+                                        .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                                            .addComponent(txtApellidos)))
+                                    .addGroup(pnAzulLayout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(txtVerifypassword, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(pnAzulLayout.createSequentialGroup()
                                             .addComponent(jLabel5)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                                                .addComponent(txtPassword))))
-                                    .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(pnAzulLayout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addGap(3, 3, 3)
-                                            .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                                                .addComponent(txtApellidos)))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                .addComponent(jSeparator5)
+                                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addContainerGap(57, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAzulLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegistrar)
-                        .addGap(28, 28, 28))))
+                        .addGap(30, 30, 30))))
         );
         pnAzulLayout.setVerticalGroup(
             pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,12 +255,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -294,12 +265,12 @@ public class NuevoUsuario extends javax.swing.JFrame {
                     .addComponent(txtVerifypassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(btnRegistrar)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pnAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 360));
+        getContentPane().add(pnAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -317,18 +288,16 @@ public class NuevoUsuario extends javax.swing.JFrame {
         String verifyPass = String.valueOf(txtVerifypassword.getPassword());
 
         if (txtDUI.getText().equals("") || txtNombres.getText().equals("") || txtApellidos.getText().equals("")
-                || txtUsuario.getText().equals("") || password.equals("") || verifyPass.equals("")) {
+            || password.equals("") || verifyPass.equals("")) {
 
             JOptionPane.showMessageDialog(null, "¡Complete todos los campos para continuar!");
         } else {
 
             if (verifyPass.equals(password)) {
 
-                int resultado = 0, resultado1 = 0;
+                int resultado = 0;
                 String DUI = String.valueOf(txtDUI.getText());
-                String Usuario = String.valueOf(txtUsuario.getText());
                 String Query = "Select * from tb_usuarios where DUI='" + DUI + "'";
-                String Query1 = "Select * from tb_usuarios where usuario='" + Usuario + "'";
                 try {
                     Statement st = con.prepareStatement(Query);
                     ResultSet rs = st.executeQuery(Query);
@@ -338,29 +307,18 @@ public class NuevoUsuario extends javax.swing.JFrame {
                         if (resultado == 1) {
                             JOptionPane.showMessageDialog(null, "¡Este DUI ya se encuentra activo!");
                         } else {
-                            Statement st1 = con.prepareStatement(Query1);
-                            ResultSet rs1 = st1.executeQuery(Query1);
+                            try {
+                                String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
+                                PreparedStatement pst = con.prepareStatement(SQL);
+                                pst.setString(1, txtDUI.getText());
+                                pst.setString(2, txtNombres.getText());
+                                pst.setString(3, txtApellidos.getText());
+                                pst.setString(4, password);
 
-                            if (rs1.next()) {
-                                resultado1 = 1;
-                                if (resultado1 == 1) {
-                                    JOptionPane.showMessageDialog(null, "¡Este usuario no está disponible!");
-                                } else {
-                                    try {
-                                        String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, usuario, contrasenia) values(?,?,?,?,?)";
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-                                        pst.setString(1, txtDUI.getText());
-                                        pst.setString(2, txtNombres.getText());
-                                        pst.setString(3, txtApellidos.getText());
-                                        pst.setString(4, txtUsuario.getText());
-                                        pst.setString(5, password);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "¡Registro Completo!");
-                                    } catch (Exception e) {
-                                        JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + e);
-                                    }
-                                }
+                                pst.executeUpdate();
+                                JOptionPane.showMessageDialog(null, "¡Registro Completo!");
+                            } catch (Exception e) {
+                                JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + e);
                             }
                         }
                     }
@@ -414,7 +372,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -422,7 +379,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblReturn;
@@ -431,7 +387,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtDUI;
     private javax.swing.JTextField txtNombres;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUsuario;
     private javax.swing.JPasswordField txtVerifypassword;
     // End of variables declaration//GEN-END:variables
 
