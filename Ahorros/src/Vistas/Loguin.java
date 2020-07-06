@@ -15,8 +15,21 @@ public class Loguin extends javax.swing.JFrame {
     public Loguin() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
 
+    private void Cerrar(){
+        
+        String botones[]={"Cerrar", "Cancelar"};
+        int opcion = JOptionPane.showOptionDialog(this, "¿Estás seguro que quieres salir?", "Confirmar", 0, 0, null , botones, this);
+        
+        if(opcion == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+        else if(opcion == JOptionPane.NO_OPTION){
+            System.out.println("¡Cancelado!");
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,6 +49,12 @@ public class Loguin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(300, 380));
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(15, 47, 105));
@@ -184,6 +203,11 @@ public class Loguin extends javax.swing.JFrame {
         user.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblNuevoRegistroMouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+
+        Cerrar();
+    }//GEN-LAST:event_formWindowClosing
     
     public void ValidacionLoguin(){
         
@@ -211,7 +235,7 @@ public class Loguin extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             
-            JOptionPane.showMessageDialog(null, "ERROR 404");
+            JOptionPane.showMessageDialog(null, "A ocurrido un error: \n" + e);
         }
     }
     
