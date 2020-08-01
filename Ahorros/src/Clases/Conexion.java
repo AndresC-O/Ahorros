@@ -9,7 +9,7 @@ public class Conexion {
     
     private static Connection conn;
     private static final String User = "root";
-    private static final String Password = "1234";
+    private static final String Password = "root";
     private static final String url = "jdbc:mysql://localhost:3306/ahorrosbd";
     
     public Conexion(){

@@ -288,7 +288,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
         String verifyPass = String.valueOf(txtVerifypassword.getPassword());
 
         if (txtDUI.getText().equals("") || txtNombres.getText().equals("") || txtApellidos.getText().equals("")
-            || password.equals("") || verifyPass.equals("")) {
+                || password.equals("") || verifyPass.equals("")) {
 
             JOptionPane.showMessageDialog(null, "¡Complete todos los campos para continuar!");
         } else {
@@ -306,21 +306,19 @@ public class NuevoUsuario extends javax.swing.JFrame {
                         resultado = 1;
                         if (resultado == 1) {
                             JOptionPane.showMessageDialog(null, "¡Este DUI ya se encuentra activo!");
-                        } else {
-                            try {
-                                String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
-                                PreparedStatement pst = con.prepareStatement(SQL);
-                                pst.setString(1, txtDUI.getText());
-                                pst.setString(2, txtNombres.getText());
-                                pst.setString(3, txtApellidos.getText());
-                                pst.setString(4, password);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "¡Registro Completo!");
-                            } catch (Exception e) {
-                                JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + e);
-                            }
                         }
+                    } else {
+
+                        String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
+                        PreparedStatement pst = con.prepareStatement(SQL);
+                        pst.setString(1, txtDUI.getText());
+                        pst.setString(2, txtNombres.getText());
+                        pst.setString(3, txtApellidos.getText());
+                        pst.setString(4, password);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "¡Registro Completo!");
+
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + ex);
