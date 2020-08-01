@@ -7,12 +7,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-public class Loguin extends javax.swing.JFrame {
+public class FrmLoguin extends javax.swing.JFrame {
 
     Conexion cc = new Conexion();
     Connection cn = cc.getConnection();
     
-    public Loguin() {
+    public FrmLoguin() {
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -199,7 +199,7 @@ public class Loguin extends javax.swing.JFrame {
 
     private void lblNuevoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevoRegistroMouseClicked
 
-        NuevoUsuario user = new NuevoUsuario();
+        FrmNuevoUsuario user = new FrmNuevoUsuario();
         user.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblNuevoRegistroMouseClicked
@@ -243,7 +243,7 @@ public class Loguin extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Loguin().setVisible(true);
+                new FrmLoguin().setVisible(true);
             }
         });
     }

@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author andre
  */
-public class NuevoUsuario extends javax.swing.JFrame {
+public class FrmNuevoUsuario extends javax.swing.JFrame {
 
     Conexion cn = new Conexion();
     Connection con = cn.getConnection();
@@ -25,7 +25,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
     /**
      * Creates new form NuevoUsuario
      */
-    public NuevoUsuario() {
+    public FrmNuevoUsuario() {
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -204,7 +204,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
                                         .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
                                             .addComponent(txtNombres))))
-                                .addGap(0, 57, Short.MAX_VALUE))
+                                .addGap(0, 28, Short.MAX_VALUE))
                             .addGroup(pnAzulLayout.createSequentialGroup()
                                 .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnAzulLayout.createSequentialGroup()
@@ -225,7 +225,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
                                             .addGroup(pnAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(jSeparator5)
                                                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addContainerGap(57, Short.MAX_VALUE))))
+                                .addContainerGap(28, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAzulLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegistrar)
@@ -270,14 +270,14 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pnAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 330));
+        getContentPane().add(pnAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblReturnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblReturnMouseClicked
 
-        Loguin log = new Loguin();
+        FrmLoguin log = new FrmLoguin();
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblReturnMouseClicked
@@ -309,16 +309,19 @@ public class NuevoUsuario extends javax.swing.JFrame {
                         }
                     } else {
 
-                        String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
-                        PreparedStatement pst = con.prepareStatement(SQL);
-                        pst.setString(1, txtDUI.getText());
-                        pst.setString(2, txtNombres.getText());
-                        pst.setString(3, txtApellidos.getText());
-                        pst.setString(4, password);
+                        try {
+                            String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
+                            PreparedStatement pst = con.prepareStatement(SQL);
+                            pst.setString(1, txtDUI.getText());
+                            pst.setString(2, txtNombres.getText());
+                            pst.setString(3, txtApellidos.getText());
+                            pst.setString(4, password);
 
-                        pst.executeUpdate();
-                        JOptionPane.showMessageDialog(null, "¡Registro Completo!");
-
+                            pst.executeUpdate();
+                            JOptionPane.showMessageDialog(null, "¡Registro Completo!");
+                        } catch (Exception ecc) {
+                            JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + ecc);
+                        }
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + ex);
@@ -347,20 +350,21 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NuevoUsuario().setVisible(true);
+                new FrmNuevoUsuario().setVisible(true);
             }
         });
     }
