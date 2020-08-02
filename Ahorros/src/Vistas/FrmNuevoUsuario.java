@@ -6,6 +6,7 @@
 package Vistas;
 
 import Clases.Conexion;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -110,6 +111,11 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         txtDUI.setForeground(new java.awt.Color(255, 255, 255));
         txtDUI.setBorder(null);
         txtDUI.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtDUI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDUIKeyTyped(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(148, 162, 188));
         jSeparator1.setForeground(new java.awt.Color(148, 162, 188));
@@ -124,6 +130,11 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         txtNombres.setForeground(new java.awt.Color(255, 255, 255));
         txtNombres.setBorder(null);
         txtNombres.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombresKeyTyped(evt);
+            }
+        });
 
         jSeparator2.setBackground(new java.awt.Color(148, 162, 188));
         jSeparator2.setForeground(new java.awt.Color(148, 162, 188));
@@ -136,6 +147,11 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         txtApellidos.setForeground(new java.awt.Color(255, 255, 255));
         txtApellidos.setBorder(null);
         txtApellidos.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyTyped(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -152,6 +168,11 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
         txtPassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyTyped(evt);
+            }
+        });
 
         jSeparator5.setBackground(new java.awt.Color(148, 162, 188));
         jSeparator5.setForeground(new java.awt.Color(148, 162, 188));
@@ -161,6 +182,11 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         txtVerifypassword.setForeground(new java.awt.Color(255, 255, 255));
         txtVerifypassword.setBorder(null);
         txtVerifypassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtVerifypassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVerifypasswordKeyTyped(evt);
+            }
+        });
 
         jSeparator6.setBackground(new java.awt.Color(148, 162, 188));
         jSeparator6.setForeground(new java.awt.Color(148, 162, 188));
@@ -335,6 +361,42 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtDUIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDUIKeyTyped
+        
+        if(txtDUI.getText().length() >= 10){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtDUIKeyTyped
+
+    private void txtNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyTyped
+        if(txtNombres.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtNombresKeyTyped
+
+    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
+        if(txtApellidos.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtApellidosKeyTyped
+
+    private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyTyped
+       if(txtPassword.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtPasswordKeyTyped
+
+    private void txtVerifypasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVerifypasswordKeyTyped
+        if(txtVerifypassword.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtVerifypasswordKeyTyped
 
     /**
      * @param args the command line arguments

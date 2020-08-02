@@ -1,6 +1,7 @@
 package Vistas;
 
 import Clases.Conexion;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -64,6 +65,11 @@ public class FrmLoguin extends javax.swing.JFrame {
         txtDUI.setForeground(new java.awt.Color(255, 255, 255));
         txtDUI.setBorder(null);
         txtDUI.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtDUI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDUIKeyTyped(evt);
+            }
+        });
 
         txtPassword.setBackground(new java.awt.Color(15, 47, 105));
         txtPassword.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -208,6 +214,14 @@ public class FrmLoguin extends javax.swing.JFrame {
 
         Cerrar();
     }//GEN-LAST:event_formWindowClosing
+
+    private void txtDUIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDUIKeyTyped
+
+        if(txtDUI.getText().length() >= 10){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtDUIKeyTyped
     
     public void ValidacionLoguin(){
         
