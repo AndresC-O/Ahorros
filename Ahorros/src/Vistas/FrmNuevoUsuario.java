@@ -319,6 +319,9 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
 
                             pst.executeUpdate();
                             JOptionPane.showMessageDialog(null, "¡Registro Completo!");
+                            FrmInicio inicio = new FrmInicio();
+                            inicio.setVisible(true);
+                            this.dispose();
                         } catch (Exception ecc) {
                             JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error! \n" + ecc);
                         }

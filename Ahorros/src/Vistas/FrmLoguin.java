@@ -226,7 +226,9 @@ public class FrmLoguin extends javax.swing.JFrame {
                 resultado = 1;
                 if(resultado == 1){
                     
-                    JOptionPane.showMessageDialog(null, "FUNCIONA");
+                    FrmInicio inicio = new FrmInicio();
+                    inicio.setVisible(true);
+                    this.dispose();
                 }
             }
             else{
