@@ -30,6 +30,7 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        
     }
 
     /**

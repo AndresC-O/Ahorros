@@ -223,11 +223,12 @@ public class FrmLoguin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtDUIKeyTyped
     
+    public static String DUI = ""; 
     public void ValidacionLoguin(){
         
         int resultado = 0;
         String pass = String.valueOf(txtPassword.getPassword());
-        String DUI = txtDUI.getText();
+        DUI = txtDUI.getText();
         String SQL = "Select * from tb_usuarios where DUI= '" + DUI +"' and contrasenia= '"+ pass +"'";
         
         try {

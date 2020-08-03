@@ -20,17 +20,33 @@ public class FrmInicio extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+
+        FrmLoguin log = new FrmLoguin();
+        lblDUI.setText(log.DUI);
     }
-    
-    private void Cerrar(){
-        
-        String botones[]={"Cerrar", "Cancelar"};
-        int opcion = JOptionPane.showOptionDialog(this, "¿Estás seguro que quieres salir?", "Confirmar", 0, 0, null , botones, this);
-        
-        if(opcion == JOptionPane.YES_OPTION){
+
+    private void Cerrar() {
+
+        String botones[] = {"Cerrar", "Cancelar"};
+        int opcion = JOptionPane.showOptionDialog(this, "¿Estás seguro que quieres salir?", "Confirmar", 0, 0, null, botones, this);
+
+        if (opcion == JOptionPane.YES_OPTION) {
             System.exit(0);
+        } else if (opcion == JOptionPane.NO_OPTION) {
+            System.out.println("¡Cancelado!");
         }
-        else if(opcion == JOptionPane.NO_OPTION){
+    }
+
+    private void CerrarSesion() {
+
+        String botones[] = {"Salir", "Cancelar"};
+        int opcion = JOptionPane.showOptionDialog(this, "¿Estás seguro que quieres cerrar sesión?", "Confirmar", 0, 0, null, botones, this);
+
+        if (opcion == JOptionPane.YES_OPTION) {
+            FrmLoguin logout = new FrmLoguin();
+            logout.setVisible(true);
+            this.dispose();
+        } else if (opcion == JOptionPane.NO_OPTION) {
             System.out.println("¡Cancelado!");
         }
     }
@@ -45,7 +61,11 @@ public class FrmInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         pnPrincipal = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnIzquierdo = new javax.swing.JPanel();
+        lblImagen = new javax.swing.JLabel();
+        lblTextDUI = new javax.swing.JLabel();
+        lblDUI = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -56,30 +76,79 @@ public class FrmInicio extends javax.swing.JFrame {
 
         pnPrincipal.setBackground(new java.awt.Color(15, 47, 105));
 
-        jPanel1.setBackground(new java.awt.Color(10, 31, 70));
+        pnIzquierdo.setBackground(new java.awt.Color(10, 31, 70));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+        lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bank (1).png"))); // NOI18N
+
+        lblTextDUI.setBackground(new java.awt.Color(255, 255, 255));
+        lblTextDUI.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTextDUI.setForeground(new java.awt.Color(255, 255, 255));
+        lblTextDUI.setText("DUI:");
+
+        lblDUI.setBackground(new java.awt.Color(255, 255, 255));
+        lblDUI.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDUI.setForeground(new java.awt.Color(255, 255, 255));
+        lblDUI.setText("00000000-0");
+
+        btnCerrarSesion.setBackground(new java.awt.Color(212, 55, 51));
+        btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/exit.png"))); // NOI18N
+        btnCerrarSesion.setText("        Cerrar Sesión");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setDefaultCapable(false);
+        btnCerrarSesion.setFocusable(false);
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnIzquierdoLayout = new javax.swing.GroupLayout(pnIzquierdo);
+        pnIzquierdo.setLayout(pnIzquierdoLayout);
+        pnIzquierdoLayout.setHorizontalGroup(
+            pnIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnIzquierdoLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(lblImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
+            .addGroup(pnIzquierdoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTextDUI)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblDUI)
+                .addContainerGap())
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+        pnIzquierdoLayout.setVerticalGroup(
+            pnIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnIzquierdoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblImagen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTextDUI)
+                    .addComponent(lblDUI))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion)
+                .addGap(25, 25, 25))
         );
+
+        btnCerrarSesion.getAccessibleContext().setAccessibleName("Cerrar Sesión");
 
         javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
         pnPrincipal.setLayout(pnPrincipalLayout);
         pnPrincipalLayout.setHorizontalGroup(
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPrincipalLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 504, Short.MAX_VALUE))
+                .addComponent(pnIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 560, Short.MAX_VALUE))
         );
         pnPrincipalLayout.setVerticalGroup(
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,6 +169,10 @@ public class FrmInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cerrar();
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        CerrarSesion();
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,7 +210,11 @@ public class FrmInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JLabel lblDUI;
+    private javax.swing.JLabel lblImagen;
+    private javax.swing.JLabel lblTextDUI;
+    private javax.swing.JPanel pnIzquierdo;
     private javax.swing.JPanel pnPrincipal;
     // End of variables declaration//GEN-END:variables
 }
