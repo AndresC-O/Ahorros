@@ -229,7 +229,7 @@ public class FrmLoguin extends javax.swing.JFrame {
         int resultado = 0;
         String pass = String.valueOf(txtPassword.getPassword());
         DUI = txtDUI.getText();
-        String SQL = "Select * from tb_usuarios where DUI= '" + DUI +"' and contrasenia= '"+ pass +"'";
+        String SQL = "Select * from tb_Usuarios where DUI= '" + DUI +"' and contrasenia= '"+ pass +"'";
         
         try {
             

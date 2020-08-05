@@ -7,10 +7,21 @@ import java.sql.SQLException;
 
 public class Conexion {
     
+    //PARA ACCEDER A LOCALHOST
+//    private static Connection conn;
+//    private static final String User = "root";
+//    private static final String Password = "root";
+//    private static final String url = "jdbc:mysql://localhost:3306/ahorrosbd";
+    //PARA ACCEDER A WEB SERVER
     private static Connection conn;
-    private static final String User = "root";
-    private static final String Password = "root";
-    private static final String url = "jdbc:mysql://localhost:3306/ahorrosbd";
+    private static final String User = "sql9358524";
+    private static final String Password = "aEpPtPGZJi";
+    private static final String url = "jdbc:mysql://sql9.freemysqlhosting.net/sql9358524";
+    //PARA ACCEDER A IP SERVER
+//    private static Connection conn;
+//    private static final String User = "root";
+//    private static final String Password = "root";
+//    private static final String url = "jdbc:mysql://192.168.1.10:3306/ahorrosbd";
     
     public Conexion(){
         conn = null;

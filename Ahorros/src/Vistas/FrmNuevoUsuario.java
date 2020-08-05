@@ -324,7 +324,7 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
 
                 int resultado = 0;
                 String DUI = String.valueOf(txtDUI.getText());
-                String Query = "Select * from tb_usuarios where DUI='" + DUI + "'";
+                String Query = "Select * from tb_Usuarios where DUI='" + DUI + "'";
                 try {
                     Statement st = con.prepareStatement(Query);
                     ResultSet rs = st.executeQuery(Query);
@@ -337,7 +337,7 @@ public class FrmNuevoUsuario extends javax.swing.JFrame {
                     } else {
 
                         try {
-                            String SQL = "Insert into tb_usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
+                            String SQL = "Insert into tb_Usuarios(DUI, nombres, apellidos, contrasenia) values(?,?,?,?)";
                             PreparedStatement pst = con.prepareStatement(SQL);
                             pst.setString(1, txtDUI.getText());
                             pst.setString(2, txtNombres.getText());

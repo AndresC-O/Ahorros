@@ -66,6 +66,8 @@ public class FrmInicio extends javax.swing.JFrame {
         lblTextDUI = new javax.swing.JLabel();
         lblDUI = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JButton();
+        btnCuentas = new javax.swing.JButton();
+        btnAbonos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -79,7 +81,7 @@ public class FrmInicio extends javax.swing.JFrame {
         pnIzquierdo.setBackground(new java.awt.Color(10, 31, 70));
 
         lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bank (1).png"))); // NOI18N
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/account.png"))); // NOI18N
 
         lblTextDUI.setBackground(new java.awt.Color(255, 255, 255));
         lblTextDUI.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -106,6 +108,26 @@ public class FrmInicio extends javax.swing.JFrame {
             }
         });
 
+        btnCuentas.setBackground(new java.awt.Color(10, 31, 70));
+        btnCuentas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCuentas.setForeground(new java.awt.Color(225, 225, 225));
+        btnCuentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/money.png"))); // NOI18N
+        btnCuentas.setText("        Cuentas");
+        btnCuentas.setBorder(null);
+        btnCuentas.setBorderPainted(false);
+        btnCuentas.setDefaultCapable(false);
+        btnCuentas.setFocusPainted(false);
+
+        btnAbonos.setBackground(new java.awt.Color(10, 31, 70));
+        btnAbonos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAbonos.setForeground(new java.awt.Color(225, 225, 225));
+        btnAbonos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/arrow.png"))); // NOI18N
+        btnAbonos.setText("        Abonos");
+        btnAbonos.setBorder(null);
+        btnAbonos.setBorderPainted(false);
+        btnAbonos.setDefaultCapable(false);
+        btnAbonos.setFocusPainted(false);
+
         javax.swing.GroupLayout pnIzquierdoLayout = new javax.swing.GroupLayout(pnIzquierdo);
         pnIzquierdo.setLayout(pnIzquierdoLayout);
         pnIzquierdoLayout.setHorizontalGroup(
@@ -121,6 +143,8 @@ public class FrmInicio extends javax.swing.JFrame {
                 .addComponent(lblDUI)
                 .addContainerGap())
             .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAbonos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnIzquierdoLayout.setVerticalGroup(
             pnIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +155,11 @@ public class FrmInicio extends javax.swing.JFrame {
                 .addGroup(pnIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTextDUI)
                     .addComponent(lblDUI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
+                .addComponent(btnCuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAbonos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesion)
                 .addGap(25, 25, 25))
         );
@@ -210,7 +238,9 @@ public class FrmInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbonos;
     private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnCuentas;
     private javax.swing.JLabel lblDUI;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblTextDUI;
