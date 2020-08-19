@@ -5,17 +5,18 @@
  */
 package Vistas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author andre
  */
-public class FrmInicio extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FrmInicio
-     */
+public class FrmInicio extends javax.swing.JFrame implements ActionListener{
+    
+    PnPresentacion pnPresent = new PnPresentacion();
+    
     public FrmInicio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -23,8 +24,13 @@ public class FrmInicio extends javax.swing.JFrame {
 
         FrmLoguin log = new FrmLoguin();
         lblDUI.setText(log.DUI);
+        
+        //this.pnPrincipal.add(pnPresent);
+        
+        this.btnCuentas.addActionListener(this);
+        this.btnAbonos.addActionListener(this);
     }
-
+        
     private void Cerrar() {
 
         String botones[] = {"Cerrar", "Cancelar"};
@@ -70,6 +76,7 @@ public class FrmInicio extends javax.swing.JFrame {
         btnAbonos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(764, 493));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -77,6 +84,7 @@ public class FrmInicio extends javax.swing.JFrame {
         });
 
         pnPrincipal.setBackground(new java.awt.Color(15, 47, 105));
+        pnPrincipal.setLayout(new java.awt.BorderLayout());
 
         pnIzquierdo.setBackground(new java.awt.Color(10, 31, 70));
 
@@ -117,6 +125,11 @@ public class FrmInicio extends javax.swing.JFrame {
         btnCuentas.setBorderPainted(false);
         btnCuentas.setDefaultCapable(false);
         btnCuentas.setFocusPainted(false);
+        btnCuentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCuentasActionPerformed(evt);
+            }
+        });
 
         btnAbonos.setBackground(new java.awt.Color(10, 31, 70));
         btnAbonos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -166,29 +179,9 @@ public class FrmInicio extends javax.swing.JFrame {
 
         btnCerrarSesion.getAccessibleContext().setAccessibleName("Cerrar Sesión");
 
-        javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
-        pnPrincipal.setLayout(pnPrincipalLayout);
-        pnPrincipalLayout.setHorizontalGroup(
-            pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnPrincipalLayout.createSequentialGroup()
-                .addComponent(pnIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 560, Short.MAX_VALUE))
-        );
-        pnPrincipalLayout.setVerticalGroup(
-            pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        pnPrincipal.add(pnIzquierdo, java.awt.BorderLayout.WEST);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(pnPrincipal, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,6 +194,10 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         CerrarSesion();
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void btnCuentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuentasActionPerformed
+        
+    }//GEN-LAST:event_btnCuentasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,4 +244,16 @@ public class FrmInicio extends javax.swing.JFrame {
     private javax.swing.JPanel pnIzquierdo;
     private javax.swing.JPanel pnPrincipal;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        Object evt = e.getSource();
+        
+        pnPresent.setVisible(true);
+        if(evt.equals(btnCuentas)){
+            pnPrincipal.add(pnPresent);
+            pnPrincipal.validate();
+        }
+    }
 }
