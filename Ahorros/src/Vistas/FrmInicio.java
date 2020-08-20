@@ -76,7 +76,7 @@ public class FrmInicio extends javax.swing.JFrame implements ActionListener{
         btnAbonos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(764, 493));
+        setMinimumSize(new java.awt.Dimension(825, 493));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -84,6 +84,7 @@ public class FrmInicio extends javax.swing.JFrame implements ActionListener{
         });
 
         pnPrincipal.setBackground(new java.awt.Color(15, 47, 105));
+        pnPrincipal.setMinimumSize(new java.awt.Dimension(764, 493));
         pnPrincipal.setLayout(new java.awt.BorderLayout());
 
         pnIzquierdo.setBackground(new java.awt.Color(10, 31, 70));
