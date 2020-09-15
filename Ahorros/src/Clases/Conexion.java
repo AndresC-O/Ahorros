@@ -27,12 +27,16 @@ public class Conexion {
 //    private static final String User = "root";
 //    private static final String Password = "root";
 //    private static final String url = "jdbc:mysql://192.168.1.10:3306/ahorrosbd";
+    //CLEVER CLOUD
+//    private static Connection conn;
+//    private static final String User = "utn7chwym1nilbmo";
+//    private static final String Password = "1yvBffuLl3kgHriBkEbT";
+//    private static final String url = "jdbc:mysql://utn7chwym1nilbmo:1yvBffuLl3kgHriBkEbT@bqllywv0ncsvzeizyeqf-mysql.services.clever-cloud.com:3306/bqllywv0ncsvzeizyeqf";
     
     public Conexion(){
         conn = null;
         try{
-            conn = (Connection) DriverManager.getConnection(url, User, Password);
-            
+            conn = (Connection) DriverManager.getConnection(url, User, Password);   
             if(conn != null){
                 System.out.println("¡Conexión Establecida!");
             }

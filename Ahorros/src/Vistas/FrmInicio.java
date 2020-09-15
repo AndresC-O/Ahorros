@@ -256,5 +256,9 @@ public class FrmInicio extends javax.swing.JFrame implements ActionListener{
             pnPrincipal.add(pnPresent);
             pnPrincipal.validate();
         }
+        else if(evt.equals(lblImagen)){
+            pnPrincipal.add(pnPresent);
+            pnPrincipal.validate();
+        }
     }
 }
